@@ -47,3 +47,9 @@ a {
   font-size: 2rem;
   letter-spacing: 3px;
 }
+
+.sidebar {
+  padding: 2rem;
+  background-color: #fee2e2;
+  color: #ef4444;
+}
