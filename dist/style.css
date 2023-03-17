@@ -34,3 +34,9 @@ a {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
 }
+
+.header {
+  grid-column: 1 / span 2;
+  background-color: #ef4444;
+  padding: 1rem 2rem;
+}
