@@ -102,3 +102,23 @@ button {
   color: #0c4a6e;
   text-transform: uppercase;
 }
+
+.button-add-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 3rem;
+
+  /* background-color: #e48080; */
+  /* background-color: #f0f9ff; */
+  background-color: transparent;
+  color: #0c4a6e;
+  /* border: 1px solid #93c5fd; */
+  border: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  /* border-radius: 50%; */
+
+  cursor: pointer;
+}
