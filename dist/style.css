@@ -27,29 +27,28 @@ a {
   text-decoration: none;
 }
 
+button {
+  appearance: none;
+}
+
 #container {
   display: grid;
   width: 100%;
   min-height: 100vh;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: auto 1fr;
 }
 
 .header {
   grid-column: 1 / span 2;
-  background-color: #ef4444;
+  background-color: #0369a1;
   padding: 1rem 2rem;
+  border-bottom: 2px solid #f0f9ff;
 }
 
 .header-heading {
   font-family: "Source Sans Pro", sans-serif;
-  color: #fff;
+  color: #f0f9ff;
   font-size: 2rem;
   letter-spacing: 3px;
-}
-
-.sidebar {
-  padding: 2rem;
-  background-color: #fee2e2;
-  color: #ef4444;
 }
