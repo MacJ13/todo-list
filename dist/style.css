@@ -52,3 +52,34 @@ button {
   font-size: 2rem;
   letter-spacing: 3px;
 }
+.nav-sidebar {
+  background-color: #bfdbfe;
+  color: #0c4a6e;
+}
+
+.nav-menu {
+  padding: 1.5rem 1.25rem;
+  border-bottom: 2px dashed #f0f9ff;
+}
+
+.nav-item {
+  width: 100%;
+  font-weight: 500;
+  /* background-color: #ef4444; */
+
+  padding: 0.75rem;
+  border: 1px solid #93c5fd;
+  margin-bottom: 0.5rem;
+  background-color: #f0f9ff;
+
+  border-radius: 5px;
+}
+
+.nav-item:hover {
+  background-color: #fde047;
+  color: #ffffff;
+}
+
+.nav-menu > .nav-item:last-child {
+  margin-bottom: 0;
+}
