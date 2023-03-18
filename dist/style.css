@@ -129,3 +129,30 @@ button {
 
   cursor: pointer;
 }
+
+.todo {
+  padding: 1.5rem 0;
+}
+
+.todo-main {
+  text-align: center;
+  margin-bottom: 5rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.todo-content {
+  padding: 0 2.5rem;
+}
+
+.todo-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px dashed #0c4a6e;
+  padding: 1rem 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-title-txt {
+  font-size: 1.5rem;
+}
