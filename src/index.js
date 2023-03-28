@@ -111,3 +111,13 @@ const updateProjectTitle = function ({ title }) {
 };
 
 pubsub.subscribe("edit-project", updateProjectTitle);
+
+/////////////////////////////////////////////////////
+/// OPEN EDIT MODAL FOR TARGET TASK
+const openEditTaskModal = function ({ id, target }) {
+  todoList.getCurrentProject().setCurrentTask(id);
+  const currentTask = todoList.getCurrentProject().getCurrentTask();
+  dom.renderModal(target, currentTask);
+};
+
+pubsub.subscribe("open-edit-task", openEditTaskModal);
