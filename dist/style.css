@@ -240,6 +240,21 @@ button {
 /* //////////////////////////////// */
 /* MODAL SELECTORS */
 /* //////////////////////////////// */
+
+/* input controls in modal elements  */
+input#title {
+  margin-bottom: 1rem;
+}
+
+select {
+  color: #0369a1;
+}
+
+input[type="date"] {
+  font-family: "Lato", sans-serif;
+  color: #0369a1;
+}
+
 .modal {
   position: fixed;
   top: 0;
