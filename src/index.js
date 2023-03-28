@@ -91,3 +91,14 @@ const deleteProject = function () {
 };
 
 pubsub.subscribe("delete-project", deleteProject);
+
+////////////////////////////////////////////////
+/////////////// OPEN MODAL FOR PROJECT WITH EDIT FEATURES
+const openEditProjectModal = function ({ id, target }) {
+  const currentProject = todoList.findProjectByID(id);
+  todoList.setCurrentProject(currentProject);
+  dom.renderTodoBoard(currentProject);
+  dom.renderModal(target, currentProject);
+};
+
+pubsub.subscribe("edit", openEditProjectModal);
