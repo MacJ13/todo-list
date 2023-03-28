@@ -160,6 +160,13 @@ const openInfoModal = function ({ id, target }) {
 
 pubsub.subscribe("info", openInfoModal);
 
+/////////////////////////
+// CHANGE COMPLETE VALUE IN CURRENT TASK
+const completeTask = function (id) {
+  todoList.getCurrentTask(id).changeCompleted();
+};
+pubsub.subscribe("complete-task", completeTask);
+
 // SET TARGET PROJECT TO FIND CURRENT TASK
 const setTargetProject = function (id) {
   todoList.findCurrentTaskProject(id);
