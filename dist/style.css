@@ -128,26 +128,6 @@ button {
   gap: 0.5rem;
 }
 
-.button-add-project {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-  font-size: 3rem;
-
-  background-color: transparent;
-  color: #0c4a6e;
-  border: none;
-  width: 1.25rem;
-  height: 1.25rem;
-
-  cursor: pointer;
-}
-
-.button-add-project:hover {
-  color: #90cdf5;
-}
-
 .todo {
   padding: 1.5rem 0;
 }
@@ -213,20 +193,13 @@ button {
   margin-right: 2rem;
 }
 
-.duedate-color {
-  color: #8d1010;
-}
-
 .todo-task-control {
   display: flex;
   gap: 0.5rem;
 }
 
-.icon-checked {
-  position: relative;
-  font-size: 1rem;
-  line-height: 0 !important;
-  cursor: pointer;
+.duedate-color {
+  color: #8d1010;
 }
 
 .nav-item > .fa-solid {
@@ -448,13 +421,6 @@ textarea.modal-control-input {
   gap: 0.5rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.score-through {
-  text-decoration: line-through;
-}
 .nav-project-content > h3 {
   color: #0c4a6e;
   text-transform: uppercase;
@@ -483,6 +449,7 @@ textarea.modal-control-input {
   color: #90cdf5;
 }
 
+/* SELECTORS FOR ICONS */
 .color-low {
   color: #84cc16;
 }
@@ -508,4 +475,12 @@ textarea.modal-control-input {
 .fa-solid[data-type]:hover {
   opacity: 0.66;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.score-through {
+  text-decoration: line-through;
 }
