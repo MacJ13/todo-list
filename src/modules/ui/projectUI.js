@@ -58,7 +58,6 @@ export const projectUI = (function () {
       const target = e.target;
       if (target.nodeName === "UL") return;
       const { id } = target.closest(".project").dataset;
-      console.log({ id });
       switch (true) {
         case e.target.dataset.type === "edit":
           pubsub.publish("edit", { id, target: target.dataset });
@@ -81,7 +80,6 @@ export const projectUI = (function () {
 
   const onClickCategoryMenu = function () {
     menuEl.addEventListener("click", (e) => {
-      console.log("log");
       const { category } = e.target.dataset;
       if (!category) return;
       pubsub.publish("filter-tasks", category);
