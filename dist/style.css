@@ -236,3 +236,177 @@ button {
 .todo-main > .fa-solid {
   margin-right: 1rem;
 }
+
+/* //////////////////////////////// */
+/* MODAL SELECTORS */
+/* //////////////////////////////// */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #a2a2a274;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 32rem;
+  background-color: #fff;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 0px 3px #90cdf5;
+}
+
+.modal-paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  display: block;
+
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  color: #0c4a6e;
+}
+
+.modal-close > * {
+  font-size: 1.5rem;
+}
+
+.modal-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+.modal-control-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.modal-control-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.modal-control-input {
+  font-family: "Lato", sans-serif;
+  width: 20rem;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid #90cdf5;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #0369a1;
+  background-color: #f0f9ff;
+}
+
+textarea.modal-control-input {
+  resize: both;
+}
+
+.modal-control-input:focus {
+  outline: none;
+}
+.modal-control-input::placeholder {
+  color: #1f8ac4;
+}
+
+.modal-task-detail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #90cdf5;
+  border-top: 2px solid #90cdf5;
+  border-bottom: 2px solid #90cdf5;
+  margin-bottom: 1.5rem;
+  gap: 2px;
+}
+
+.modal-task-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: #f0f9ff;
+  padding: 1rem 1.5rem;
+}
+
+.modal-task-item > .item-title {
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.modal-task-item > .item-feature {
+  flex: 2;
+  font-weight: 400;
+}
+
+.modal-wrapper-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 17.5rem;
+  margin-top: 0.5rem;
+}
+
+.modal-wrapper-btn > .btn-close {
+  background-color: #fff;
+  border: 2px solid #90cdf5;
+  color: #70c0f6;
+}
+
+.modal-wrapper-btn > .btn-close:hover {
+  background-color: #f0f9ff;
+}
+
+.modal-control-button {
+  position: relative;
+  width: 7.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  background-color: #4fb6fa;
+
+  border: 2px solid transparent;
+  text-align: center;
+  color: #f0f9ff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+.modal-control-button:hover {
+  background-color: #90cdf5;
+}
+
+.modal-control-button:active {
+  top: 2px;
+}
