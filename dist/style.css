@@ -478,7 +478,7 @@ textarea.modal-control-input {
   text-transform: uppercase;
 }
 
-.button-add-project {
+.button-add {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -494,7 +494,7 @@ textarea.modal-control-input {
   cursor: pointer;
 }
 
-.button-add-project:hover {
+.button-add:hover {
   color: #90cdf5;
 }
 
