@@ -477,3 +477,23 @@ textarea.modal-control-input {
   color: #0c4a6e;
   text-transform: uppercase;
 }
+
+.button-add-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 3rem;
+
+  background-color: transparent;
+  color: #0c4a6e;
+  border: none;
+  width: 1.25rem;
+  height: 1.25rem;
+
+  cursor: pointer;
+}
+
+.button-add-project:hover {
+  color: #90cdf5;
+}
