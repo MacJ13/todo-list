@@ -6,33 +6,327 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/81718408a3.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js" defer></script>
   </head>
   <body>
     <div id="container">
       <div class="header">
-        <h1 class="header-heading">TodoList</h1>
+        <h1 class="header-heading">
+          <i class="fa-solid icon-heading fa-list-check"></i>
+          TodoList
+        </h1>
       </div>
       <div class="nav-sidebar">
         <ul class="nav-menu">
-          <li class="nav-item">All</li>
-          <li class="nav-item">Today</li>
-          <li class="nav-item">Week</li>
-          <li class="nav-item">Important</li>
-          <li class="nav-item">Completed</li>
+          <li class="nav-item nav-item-active" data-category="all">
+            <i class="fa-solid icon-nav fa-calendar"></i>
+            All
+          </li>
+          <li class="nav-item" data-category="today">
+            <i class="fa-solid icon-nav fa-calendar-day"></i> Today
+          </li>
+          <li class="nav-item" data-category="week">
+            <i class="fa-solid icon-nav fa-calendar-week"></i>Week
+          </li>
+          <li class="nav-item" data-category="important">
+            <i class="fa-solid icon-nav fa-calendar-plus"></i>Important
+          </li>
+          <li class="nav-item" data-category="completed">
+            <i class="fa-solid icon-nav fa-calendar-check"></i>Completed
+          </li>
         </ul>
         <div class="nav-project">
           <div class="nav-project-content">
             <h3>Projects</h3>
-            <button type="button" class="button-add-project">+</button>
+            <button
+              id="create-project"
+              data-type="create"
+              data-modal="create-project"
+              type="button"
+              class="nav-project-btn button-add"
+            >
+              +
+            </button>
           </div>
           <ul class="projects">
-            <li class="project nav-item">default project</li>
-            <li class="project nav-item">new brand project</li>
+            <!-- <li class="project nav-item">
+              <div class="project-title">
+                <i class="fa-solid icon-nav fa-folder-open"></i>
+                default project
+              </div>
+
+              <div class="project-controls">
+                <i
+                  class="fa-solid fa-pen-to-square"
+                  data-type="edit"
+                  data-modal="edit-project"
+                ></i>
+                <i
+                  class="fa-solid fa-trash"
+                  data-type="delete"
+                  data-modal="delete-project"
+                ></i>
+              </div>
+            </li>
+            <li class="project nav-item">
+              <div class="project-title">
+                <i class="fa-solid icon-nav fa-folder-open"></i>
+                new brand object project
+              </div>
+
+              <div class="project-controls">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+            </li> -->
           </ul>
         </div>
       </div>
-      <div class="todo-content">Todocontent</div>
+      <div class="todo">
+        <div class="todo-main">
+          <!-- <i class="fa-solid fa-calendar icon-todo-main"></i>
+          <h2 class="todo-heading"></h2> -->
+        </div>
+
+        <div class="todo-content">
+          <div class="todo-title">
+            <h3 class="h3 todo-title-txt">Tasks</h3>
+            <button
+              id="create-task"
+              data-type="create"
+              data-modal="create-task"
+              type="button"
+              class="todo-title-btn button-add hidden"
+            >
+              +
+            </button>
+          </div>
+          <ul class="todo-tasks">
+            <!-- <li class="todo-task">
+              <div class="todo-task-col">
+                <div class="todo-task-checked">
+                  <i class="fa-solid fa-circle icon-checked-low"></i>
+                </div>
+                <div class="todo-task-title">
+                  Enjoy my task with some brand new coffee
+                </div>
+                <div class="todo-task-control"></div>
+              </div>
+              <div class="todo-task-col">
+                <div class="todo-task-duedate">2011-11-11</div>
+
+                <div class="todo-task-control">
+                  <div
+                    class="todo-task-info"
+                    data-type="info"
+                    data-modal="info-task"
+                  >
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div
+                    class="todo-task-update"
+                    data-type="edit"
+                    data-modal="edit-task"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </div>
+                  <div
+                    class="todo-task-del"
+                    data-type="delete"
+                    data-modal="delete-task"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="todo-task">
+              <div class="todo-task-col">
+                <div class="todo-task-checked">
+                  <i class="fa-solid fa-circle-check icon-checked"></i>
+                </div>
+                <div class="todo-task-title">
+                  Enjoy my sdfsdfdfgfd sdfsdfsdf
+                </div>
+                <div class="todo-task-control"></div>
+              </div>
+              <div class="todo-task-col">
+                <div class="todo-task-duedate">2011-11-11</div>
+
+                <div class="todo-task-control">
+                  <div
+                    class="todo-task-info"
+                    data-type="info"
+                    data-modal="info-task"
+                  >
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div
+                    class="todo-task-update"
+                    data-type="edit"
+                    data-modal="edit-task"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </div>
+                  <div
+                    class="todo-task-del"
+                    data-type="delete"
+                    data-modal="delete-task"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="modal hidden">
+        <div class="modal-container">
+          <button class="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="modal-heading"></h3>
+          <div class="modal-wrapper">
+            <!-- <h3 class="modal-heading">delete project</h3>
+            <p class="modal-paragraph">
+              Are you sure you want to delete project?
+            </p>
+            <div class="modal-wrapper-btn">
+              <button
+                id="add-task"
+                class="modal-control-button btn-close"
+                type="button"
+              >
+                No
+              </button>
+              <button id="add-task" class="modal-control-button" type="button">
+                Yes
+              </button>
+            </div> -->
+
+            <!-- <h3 class="modal-heading">info task</h3>
+            <div class="modal-task-detail">
+              <div class="modal-task-item">
+                <span class="item-title">title:</span>
+                <span class="item-feature"> default title</span>
+              </div>
+              <div class="modal-task-item">
+                <span class="item-title">description:</span>
+                <span class="item-feature">
+                  dsdfdsfsd sfsdfsdfsd sdfsdfsdf sdfsdfsdf dsfkldkflsd;ksdf
+                  sd;fksdkfsdkf;lskd sdfklsdkf s;dlkf;dslk s;dkf;sdkf
+                  s;fk;sdkf;sdlkf sd;fks;dfl
+                </span>
+              </div>
+              <div class="modal-task-item">
+                <span class="item-title">duedate:</span>
+                <span class="item-feature">2021-04-02</span>
+              </div>
+              <div class="modal-task-item">
+                <span class="item-title">priority:</span>
+                <span class="item-feature">not important</span>
+              </div>
+              <div class="modal-task-item">
+                <span class="item-title">completed:</span>
+                <span class="item-feature">no</span>
+              </div>
+            </div> -->
+
+            <!-- <input
+              class="modal-control-input"
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title (required)"
+              required
+            />
+            <div class="modal-control-task">
+              <textarea
+                class="modal-control-input"
+                name="description"
+                id="description"
+                placeholder="Description"
+              ></textarea>
+              <select class="modal-control-input" name="priority" id="priority">
+                <option selected disabled>Priority</option>
+                <option value="not-important">Not Important</option>
+                <option value="important">Important</option>
+                <option value="very-important">Very Important</option>
+              </select>
+              <input
+                class="modal-control-input"
+                type="date"
+                name="duedate"
+                id="duedate"
+              />
+            </div>
+
+            <button id="add-task" class="modal-control-button" type="button">
+              defau
+            </button>
+          </div> -->
+          <!-- MODAL ADD PROJECT -->
+          <!-- <div data-modal="create-project" class="modal-add-project hidden">
+            <h3 class="modal-heading">Create Project</h3>
+            <div class="modal-control-form">
+              <input
+                class="modal-control-input"
+                type="text"
+                name="project-title"
+                id="project-title"
+                placeholder="Project Title"
+              />
+              <button id="add-project" class="modal-add-button" type="button">
+                Add
+              </button>
+            </div>
+          </div> -->
+
+          <!-- MODAL ADD TASK -->
+          <!-- <div data-modal="create-task" class="modal-add-project hidden">
+            <h3 class="modal-heading">Create Task</h3>
+            <div class="modal-control-task">
+              <input
+                class="modal-control-input"
+                type="text"
+                name="task-title"
+                id="task-title"
+                placeholder="Task Title"
+              />
+              <textarea
+                class="modal-control-input"
+                name="task-desc"
+                id="task-desc"
+                placeholder="Task Description"
+              ></textarea>
+              <select
+                class="modal-control-input"
+                name="project-priority"
+                id="task-priority"
+              >
+                <option selected disabled>Priority</option>
+                <option value="not-important">Not Important</option>
+                <option value="important">Important</option>
+                <option value="important">Very Important</option>
+              </select>
+              <input
+                class="modal-control-input"
+                type="date"
+                name="task-date"
+                id="task-date"
+              />
+              <button id="add-task" class="modal-add-button" type="button">
+                Add
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
     </div>
   </body>
 </html>
