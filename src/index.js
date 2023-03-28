@@ -79,3 +79,15 @@ const openDeleteProjectModal = function ({ id, target }) {
 };
 
 pubsub.subscribe("delete", openDeleteProjectModal);
+
+///////////////////////////////////////
+///////// DELETE TARGET PROJECT FROM TODOLIST
+const deleteProject = function () {
+  const id = todoList.getCurrentProject().getId();
+  todoList.removeProject(id);
+  dom.removeProjectElement(id);
+  const tasks = todoList.getFilterTasks("all");
+  dom.renderFilterTasks("all", tasks);
+};
+
+pubsub.subscribe("delete-project", deleteProject);
