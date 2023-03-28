@@ -39,3 +39,11 @@ const createNewTask = function (newTask) {
 };
 
 pubsub.subscribe("create-task", createNewTask);
+
+///////////////////////////////////////////////
+///////// OPEN MODAL TO CREATE TASK OR PROJECT
+const openCreateModal = function (target) {
+  dom.renderModal(target, "");
+};
+
+pubsub.subscribe("open-create-modal", openCreateModal);
