@@ -159,3 +159,9 @@ const openInfoModal = function ({ id, target }) {
 };
 
 pubsub.subscribe("info", openInfoModal);
+
+// SET TARGET PROJECT TO FIND CURRENT TASK
+const setTargetProject = function (id) {
+  todoList.findCurrentTaskProject(id);
+};
+pubsub.subscribe("set-current-project", setTargetProject);
