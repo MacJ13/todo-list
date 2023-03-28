@@ -57,3 +57,14 @@ const openDeleteTaskModal = function ({ id, target }) {
 };
 
 pubsub.subscribe("open-delete-task", openDeleteTaskModal);
+
+/////////////////////////////////////////////////
+//// DELETE TASK FROM PROJECT
+const deleteTask = function () {
+  const currentProject = todoList.getCurrentProject();
+  const taskId = currentProject.getCurrentTask().getId();
+  currentProject.removeTask(taskId);
+  dom.removeTaskElement(taskId);
+};
+
+pubsub.subscribe("delete-task", deleteTask);
