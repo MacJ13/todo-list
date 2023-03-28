@@ -425,3 +425,43 @@ textarea.modal-control-input {
 .modal-control-button:active {
   top: 2px;
 }
+
+/* //////////////////////////////// */
+/* PROJECT */
+/* ////////////////////////////// */
+
+.project {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.project-title > .fa-solid {
+  margin-right: 0.5rem;
+}
+
+.project-create-row,
+.project-create-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-create-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.project-create-input:focus {
+  outline: none;
+}
+
+.project-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
