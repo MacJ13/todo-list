@@ -138,3 +138,15 @@ const editTaskValues = function (obj) {
 };
 
 pubsub.subscribe("edit-task", editTaskValues);
+
+//////////////////////////////
+// OPEN TASKS PROJECT ON TODO-BOARD WHEN WE CLICK ON PROJECT ELEMENT
+const openTargetProject = function (id) {
+  if (todoList.getCategory()) todoList.setCategory("");
+
+  const currentProject = todoList.findProjectByID(id);
+  todoList.setCurrentProject(currentProject);
+  dom.renderTodoBoard(currentProject);
+};
+
+pubsub.subscribe("open-project", openTargetProject);
