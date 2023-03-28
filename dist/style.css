@@ -465,3 +465,15 @@ textarea.modal-control-input {
   align-items: center;
   gap: 0.5rem;
 }
+
+.hidden {
+  display: none;
+}
+
+.score-through {
+  text-decoration: line-through;
+}
+.nav-project-content > h3 {
+  color: #0c4a6e;
+  text-transform: uppercase;
+}
