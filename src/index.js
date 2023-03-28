@@ -16,3 +16,15 @@ const showFilterTasks = function (category) {
 };
 
 pubsub.subscribe("filter-tasks", showFilterTasks);
+
+//////////////////////////////////////////////////
+//////// CREATE NEW PROJECT
+const createNewProject = function ({ title }) {
+  todoList.setCategory("");
+  todoList.addProjectToList(title);
+  const project = todoList.getCurrentProject();
+  dom.renderTodoBoard(project);
+  dom.renderProjectEl(project);
+};
+
+pubsub.subscribe("create-project", createNewProject);
