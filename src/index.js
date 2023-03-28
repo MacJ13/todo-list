@@ -121,3 +121,20 @@ const openEditTaskModal = function ({ id, target }) {
 };
 
 pubsub.subscribe("open-edit-task", openEditTaskModal);
+
+///////////////////////////////////////////////////
+///////// EDIT VALUES IN TARGET TASK
+const editTaskValues = function (obj) {
+  const currentTask = todoList.getCurrentProject().getCurrentTask();
+  currentTask.updateValues(obj);
+
+  if (!todoList.getCategory() || todoList.getCategory() === "all") {
+    dom.updateTaskElement(currentTask);
+  } else {
+    const category = todoList.getCategory();
+    const tasks = todoList.getFilterTasks(category);
+    dom.renderFilterTasks(category, tasks);
+  }
+};
+
+pubsub.subscribe("edit-task", editTaskValues);
