@@ -47,3 +47,13 @@ const openCreateModal = function (target) {
 };
 
 pubsub.subscribe("open-create-modal", openCreateModal);
+
+////////////////////////////////////////////////////////
+// OPEN MODAL FOR TASK WITH DELETE ELEMENTS
+const openDeleteTaskModal = function ({ id, target }) {
+  todoList.getCurrentProject().setCurrentTask(id);
+  const currentTask = todoList.getCurrentProject().getCurrentTask();
+  dom.renderModal(target, currentTask);
+};
+
+pubsub.subscribe("open-delete-task", openDeleteTaskModal);
