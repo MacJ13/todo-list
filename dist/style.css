@@ -229,14 +229,10 @@ button {
   cursor: pointer;
 }
 
-.icon-todo-main {
-  margin-right: 1.5rem;
-}
-
-.icon-nav {
+.nav-item > .fa-solid {
   margin-right: 0.5rem;
 }
 
-.icon-heading {
-  margin-top: 0.25rem;
+.todo-main > .fa-solid {
+  margin-right: 1rem;
 }
