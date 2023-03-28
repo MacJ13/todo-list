@@ -150,3 +150,12 @@ const openTargetProject = function (id) {
 };
 
 pubsub.subscribe("open-project", openTargetProject);
+
+///////////////// ////////
+// OPEN INFO MODEL FOR TASK
+const openInfoModal = function ({ id, target }) {
+  dom.renderModal(target, todoList.getCurrentTask(id));
+  console.log(localStorage.getItem("current-project"));
+};
+
+pubsub.subscribe("info", openInfoModal);
