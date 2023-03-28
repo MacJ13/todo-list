@@ -497,3 +497,30 @@ textarea.modal-control-input {
 .button-add-project:hover {
   color: #90cdf5;
 }
+
+.color-low {
+  color: #84cc16;
+}
+
+.color-medium {
+  color: #edd350;
+}
+
+.color-high {
+  color: #dc2626;
+}
+
+.bg-low {
+  background-color: #84cc16;
+}
+.bg-medium {
+  background-color: #f7e797;
+}
+.bg-high {
+  background-color: #dc2626;
+}
+
+.fa-solid[data-type]:hover {
+  opacity: 0.66;
+  cursor: pointer;
+}
