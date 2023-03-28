@@ -36,7 +36,7 @@ export default function Project(projectTitle, projectId) {
 
   function addTask({ title, description, priority, duedate }) {
     const task = new Task(title, description, duedate, priority);
-    tasks.push(newTask);
+    tasks.push(task);
     currentTask = task;
   }
 
