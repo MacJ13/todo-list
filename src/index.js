@@ -28,3 +28,14 @@ const createNewProject = function ({ title }) {
 };
 
 pubsub.subscribe("create-project", createNewProject);
+
+/////////////////////////////////////////////////
+///////// CREATE NEW TASK
+const createNewTask = function (newTask) {
+  todoList.getCurrentProject().addTask(newTask);
+  const task = todoList.getCurrentProject().getCurrentTask();
+  dom.addTaskElement(task);
+  localStorage.setItem("create-task", JSON.stringify(task));
+};
+
+pubsub.subscribe("create-task", createNewTask);
