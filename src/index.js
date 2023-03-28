@@ -1,4 +1,18 @@
-const h1 = document.createElement("h1");
-h1.textContent = "Hello world";
+import TodoList from "./modules/todo";
+import { Dom } from "./modules/domUI";
 
-document.body.appendChild(h1);
+import { pubsub } from "./modules/pubsub";
+
+////// TODO OBJECTS
+const todoList = new TodoList("all");
+const dom = Dom();
+
+///////////////////////////////////////////
+/////////////// SHOW FILTER TASKS
+const showFilterTasks = function (category) {
+  const tasks = todoList.getFilterTasks(category);
+  todoList.setCategory(category);
+  dom.renderFilterTasks(category, tasks);
+};
+
+pubsub.subscribe("filter-tasks", showFilterTasks);
