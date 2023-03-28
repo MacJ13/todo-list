@@ -102,3 +102,12 @@ const openEditProjectModal = function ({ id, target }) {
 };
 
 pubsub.subscribe("edit", openEditProjectModal);
+
+//////////////////////////////////////////////////////
+////// UPDATE PROJECT VALUES
+const updateProjectTitle = function ({ title }) {
+  todoList.getCurrentProject().setTitle(title);
+  dom.updateProjectElement(todoList.getCurrentProject());
+};
+
+pubsub.subscribe("edit-project", updateProjectTitle);
