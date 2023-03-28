@@ -2,7 +2,6 @@ import { isFuture, isToday } from "date-fns";
 import { pubsub } from "../pubsub";
 
 export const todoBoardUI = (function () {
-  const headingEl = document.querySelector(".todo-heading");
   const listEl = document.querySelector(".todo-tasks");
   const mainHeadingEl = document.querySelector(".todo-main");
   const addTaskBtn = document.getElementById("create-task");
@@ -15,10 +14,12 @@ export const todoBoardUI = (function () {
     completed: "calendar-check",
   };
 
+  // CLEAR LIST OF TASKS
   const clearTaskList = function () {
     listEl.innerHTML = "";
   };
 
+  // RENDER PROJECT OR CATEGORY TITLE WITH ICON
   const renderMainHeading = function (str) {
     mainHeadingEl.innerHTML = "";
 
@@ -28,24 +29,19 @@ export const todoBoardUI = (function () {
     <h2 class="todo-heading">${str}</h2>`;
 
     mainHeadingEl.insertAdjacentHTML("beforeend", html);
-
-    // if (!addTaskBtn.classList.contains("hidden")) {
-    //   toggleAddTaskButton();
-    // }
   };
 
+  // HIDE ADD NEW TASK BUTTON
   const hideAddTaskButton = function () {
     addTaskBtn.classList.add("hidden");
   };
 
+  // SHOW ADD NEW TASK BUTTON
   const showAddTaskButton = function () {
     addTaskBtn.classList.remove("hidden");
   };
 
-  const setTodoHeading = function (str) {
-    headingEl.textContent = str;
-  };
-
+  // CREATE 'LI' ELEMENT WITH TASK DATA
   const generateTaskElement = function (task) {
     const li = document.createElement("li");
     li.className = "todo-task";
@@ -55,6 +51,7 @@ export const todoBoardUI = (function () {
     return li;
   };
 
+  // UPDATE 'ELEMENT' WITH NEW TASK DATA
   const updateTaskElement = function (currentTask) {
     const currentTaskEl = listEl.querySelector(
       `li[id="${currentTask.getId()}"]`
@@ -66,19 +63,19 @@ export const todoBoardUI = (function () {
     );
   };
 
-  const modifyTaskTitle = function (target) {
-    console.log(target);
-    const titleEl = target.querySelector(".todo-task-title");
-    console.log(titleEl);
-
-    titleEl.classList.toggle("score-through");
-  };
-
+  // ADD CREATED ELEMENT TASK TO LIST-TASK ELEMENT
   const addTaskToList = function (task) {
     const taskEl = generateTaskElement(task);
     listEl.appendChild(taskEl);
   };
 
+  // REMOVE TASK ELEMENT FROM TASK-LIST
+  const removeTaskEl = function (id) {
+    const taskEl = listEl.querySelector(`li[id="${id}"]`);
+    taskEl.remove();
+  };
+
+  // RENDER ALL ELEMENTS WITH PROJECT TASKS IN LIST-TASK ELEMENT
   const renderProjectTasks = function (tasks) {
     clearTaskList();
     tasks.forEach((task) => {
@@ -86,6 +83,7 @@ export const todoBoardUI = (function () {
     });
   };
 
+  // RETURN HTML STRING TASK-ELEMENT WITH TASK DATA
   const renderTaskDetail = function (task) {
     return `
     <div class="todo-task-col">
@@ -124,17 +122,19 @@ export const todoBoardUI = (function () {
     `;
   };
 
+  // TRANSFORM STYLE TEXT (LINE-THROUGH) OF TASK TITLE
+  const styleTaskTitle = function (target) {
+    target.querySelector(".todo-task-title").classList.toggle("score-through");
+  };
+
+  // SWITCH CHECKED ICONS
   const modifyCompletedIcon = function (target) {
     const icon = target.querySelector(`i[data-type="check"]`);
     icon.classList.toggle("fa-circle");
     icon.classList.toggle("fa-circle-check");
   };
 
-  const removeTaskEl = function (id) {
-    const taskEl = listEl.querySelector(`li[id="${id}"]`);
-    taskEl.remove();
-  };
-
+  // EVENT WHEN CLICKING ON LIST ELEMENT
   const onClickTodoTask = function () {
     listEl.addEventListener("click", (e) => {
       const target = e.target;
@@ -142,7 +142,7 @@ export const todoBoardUI = (function () {
       const taskEl = e.target.closest(".todo-task");
       pubsub.publish("set-current-project", +taskEl.id);
       if (target.dataset.type === "check") {
-        modifyTaskTitle(taskEl);
+        styleTaskTitle(taskEl);
         modifyCompletedIcon(taskEl);
         pubsub.publish("complete-task", +taskEl.id);
       } else if (target.dataset.type === "info") {
@@ -161,24 +161,25 @@ export const todoBoardUI = (function () {
     });
   };
 
+  // EVENT WHEN CLICKING ON ADD-TASK BUTTON ELEMENT
   const onClickCreateTask = function () {
     addTaskBtn.addEventListener("click", (e) => {
       pubsub.publish("open-create-modal", e.target.dataset);
     });
   };
 
+  // CALL EVENTS
   onClickTodoTask();
   onClickCreateTask();
 
   return {
-    setTodoHeading,
+    hideAddTaskButton,
+    showAddTaskButton,
     addTaskToList,
     renderProjectTasks,
+    renderMainHeading,
     clearTaskList,
     updateTaskElement,
     removeTaskEl,
-    renderMainHeading,
-    hideAddTaskButton,
-    showAddTaskButton,
   };
 })();
