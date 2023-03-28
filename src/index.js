@@ -172,3 +172,15 @@ const setTargetProject = function (id) {
   todoList.findCurrentTaskProject(id);
 };
 pubsub.subscribe("set-current-project", setTargetProject);
+
+// RE-RENDER CATEGORY TASK WHEN WE CHANGE IT VALUE;
+const updateCompleteCategory = function () {
+  if (!todoList.getCategory()) return;
+  const category = todoList.getCategory();
+  const tasks = todoList.getFilterTasks(category);
+  dom.renderFilterTasks(category, tasks);
+};
+
+pubsub.subscribe("complete-task", updateCompleteCategory);
+
+pubsub.publish("filter-tasks", todoList.getCategory());
